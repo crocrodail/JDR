@@ -1,0 +1,192 @@
+@import "./fonts.sass"
+@import "./theme.sass"
+
+.login, main
+    position: relative
+    margin: 0
+    padding: 0
+    overflow: hidden
+    width: 100vw
+    min-height: 100vh
+    background-color: #F6F7FC 
+
+@media (min-width: 767px)
+    .login
+        img[alt="footer"]
+            position: absolute
+            bottom: 0
+            right: 0
+            max-height: 30vh
+            width: 100vw
+            object-fit: cover
+            object-position: center
+            pointer-events: none
+            object-position: top
+        img[alt="Logo"]
+            width: 12vw
+            margin-top: 10vw
+        form
+            position: relative
+            display: block
+            width: 40vw
+            height: 40vw
+            text-align: center
+            margin: 0 auto
+            h1
+                font-family: "Poppin bold"
+                font-size: 1.5vw
+                margin-bottom: 3vw
+            input[type="submit"]
+                position: absolute
+                right: 4vw
+                bottom: 12.4vw
+                font-family: "dmsans-bold"
+                font-size: 1vw
+                font-weight: bold
+                background-color: $secondary
+                color: #fff
+                border: none
+                border-radius: .8vw
+                width: 5vw
+                height: 2.5vw
+                &:hover
+                    cursor: pointer
+                    background-color: $secondary-hover
+            .form-group
+                display: flex
+                flex-direction: column
+                input[type="text"]
+                    font-family: "Poppin"
+                    background-color: #fff
+                    border: none
+                    width: 25vw
+                    height: 4vw
+                    padding: 0 1vw
+                    font-size: 1vw
+                    border-top-left-radius: .5vw
+                    border-top-right-radius: .5vw
+                    border-bottom: .05vw lightgrey solid
+                input[type="password"]
+                    font-family: "Poppin"
+                    background-color: #fff
+                    border: none
+                    width: 25vw
+                    height: 4vw
+                    padding: 0 1vw
+                    font-size: 1vw
+                    border-top: .05vw lightgrey solid
+                    border-bottom-left-radius: .5vw
+                    border-bottom-right-radius: .5vw
+            .option
+                display: flex
+                font-family: "Poppin"
+                justify-content: space-between
+                width: 25vw
+                margin: 3vw auto 0 auto
+                input[type="checkbox"]
+                    position: absolute
+                    width: 1vw
+                    height: 1vw
+                span
+                    position: absolute
+                    font-size: .8vw
+                    margin-left: 2vw
+                a
+                    text-decoration: none
+                    font-size: .8vw
+                    color: #6697E6
+
+@media (max-width: 767px)
+    .login
+        position: relative
+        img[alt="footer"]
+            position: absolute
+            bottom: 0
+            right: 0
+            max-height: 60vh
+            width: 200vw
+            object-fit: cover
+            object-position: center
+            pointer-events: none
+            object-position: top
+        img[alt="Logo"]
+            position: absolute
+            top: -20vw
+            left: 25vw
+        form
+            position: relative
+            display: block
+            width: 80vw
+            height: 60vw
+            text-align: center
+            margin: 0 auto
+            margin-top: 64vw
+            background-color: #fff
+            border-radius: 2vw
+            box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)
+            h1
+                font-family: "Poppin bold"
+                font-size: 4vw
+                margin-bottom: 6vw
+                padding-top: 5vw
+            input[type="submit"]
+                position: absolute
+                right: 2vw
+                bottom: 29vw
+                font-family: "dmsans-bold"
+                font-size: 3vw
+                font-weight: bold
+                background-color: $secondary
+                color: #fff
+                border: none
+                border-radius: .8vw
+                width: 15vw
+                height: 8vw
+                &:hover
+                    cursor: pointer
+                    background-color: $secondary-hover
+            .form-group
+                display: flex
+                flex-direction: column
+                input[type="text"]
+                    font-family: "Poppin"
+                    background-color: #fff
+                    border: none
+                    width: 60vw
+                    height: 10vw
+                    padding: 0 2vw
+                    font-size: 3vw
+                    border-top-left-radius: .5vw
+                    border-top-right-radius: .5vw
+                    border-bottom: .05vw lightgrey solid
+                input[type="password"]
+                    font-family: "Poppin"
+                    background-color: #fff
+                    border: none
+                    width: 60vw
+                    height: 10vw
+                    padding: 0 2vw
+                    font-size: 3vw
+                    border-top: .05vw lightgrey solid
+                    border-bottom-left-radius: .5vw
+                    border-bottom-right-radius: .5vw
+            .option
+                display: flex
+                font-family: "Poppin"
+                justify-content: space-between
+                width: 55vw
+                margin: 8vw auto 0 auto
+                input[type="checkbox"]
+                    position: absolute
+                    width: 3vw
+                    height: 3vw
+                    left: 10vw
+                    bottom: 11vw
+                span
+                    position: absolute
+                    font-size: 2vw
+                    margin-left: 2vw
+                a
+                    text-decoration: none
+                    font-size: 2vw
+                    color: #6697E6

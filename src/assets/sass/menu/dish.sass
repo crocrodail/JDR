@@ -1,0 +1,185 @@
+@import "./../fonts.sass"
+@import "./../theme.sass"
+
+.Dish
+    width: 100%
+    .title 
+        position: relative
+        margin-top: 1vw
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        margin: auto
+        border-bottom: 1px solid #393C49
+        h1
+            font-family: "Poppin"
+            font-size: 1.5vw
+            color: $primary
+            margin: 2vw 0 3vw 2vw 
+        h2
+            font-family: "Poppin"
+            font-size: 1.2vw
+            color: #333333
+            opacity: 0.4
+            margin: .5vw 0 1.5vw 2vw
+        button
+            position: relative
+            color: white
+            font-family: "Poppin bold"
+            font-size: .8vw
+            padding-left: 2vw
+            height: 3vw
+            width: 12vw
+            border: none
+            border-radius: .8vw
+            background: $secondary
+            margin-top: 1vw
+            margin-right: 2vw
+            &:hover
+                cursor: pointer
+                background: $secondary-hover
+            svg
+                position: absolute
+                width: 1.5vw
+                height: 1.5vw
+                left: .8vw
+                top: .8vw
+        .menu-option
+            display: flex
+            position: absolute
+            bottom: 0
+            left: 1.5vw
+            justify-content: space-between
+            font-family: "Poppin bold"
+            p
+                position: relative
+                font-size: .8vw
+                width: 5vw
+                text-align: center
+                &:hover
+                    cursor: pointer
+                    color: $secondary
+                    &::after
+                        content: ""
+                        position: absolute
+                        bottom: -.9vw
+                        left: .5vw
+                        width: 4vw
+                        height: .2vw
+                        background-color: $secondary
+            .active
+                color: $secondary
+                &::after
+                    content: ""
+                    position: absolute
+                    bottom: -.9vw
+                    left: .5vw
+                    width: 4vw
+                    height: .2vw
+                    background-color: $secondary
+    .content
+        display: flex
+        justify-content: space-between
+        width: 97%
+        margin: auto
+        margin-top: 2vw
+        flex-flow: row wrap
+        &::after
+            content: ""
+            flex: auto
+
+        h1
+            margin-top: 2vw
+            margin-left: 5vw
+            font-size: 1vw
+            font-family: "Poppin bold"
+        .add
+            border: .1vw $secondary solid
+            border-style: dashed
+            text-align: center
+            font-size: 1vw
+            font-family: "Poppin"
+            color: $secondary
+            &:hover
+                cursor: pointer
+                background-color: rgb(248, 248, 248)
+                
+            svg
+                color: #000
+                display: block
+                margin: 8vw auto 0 auto
+        .item
+            position: relative
+            transform: none
+            margin-top: 1vw
+            margin-bottom: 1vw
+            display: flex
+            flex-direction: column
+            border-radius: 1vw
+            width: 12vw
+            margin-left: .4vw
+            margin-right: .4vw
+            min-height: 18vw
+            box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+            &:not(span)
+                background-color:#fff
+            
+            .switch
+                position: absolute
+                right: -1vw
+                top: .5vw
+                border-radius: 50%
+                &:hover
+                    cursor: pointer
+            img
+                display: block
+                width: 8vw
+                height: 8vw
+                border-radius: 50%
+                margin: 1.5vw 0 0 2vw
+                text-align: center
+            h2
+                width: 100%
+                text-align: center
+                font-size: 1vw
+                font-family: "Poppin"
+            h3
+                width: 100%
+                text-align: center
+                font-size: .8vw
+                font-family: "Poppin"
+                color: #ABBBC2
+                margin-bottom: 1.5vw
+            p
+                margin-left: 2vw
+                font-size: .8vw
+                font-family: "Poppin"
+                width: 40vw
+            button
+                display: flex
+                position: absolute
+                border: none
+                background: #DAE6F9
+                font-size: 1vw
+                height: 3vw
+                width: 100%
+                border-bottom-left-radius: 1vw
+                border-bottom-right-radius: 1vw
+                font-family: "Poppin bold"
+                bottom: 0
+                left: 0
+                color: #6697E6
+                &:hover
+                    cursor: pointer
+                    background-color: #ceddf7
+                svg
+                    margin: 0.5vw 0 0 2vw
+                    width: 1.5vw
+                    height: 1.5vw
+                p
+                    color: #6697E6
+                    width: unset
+                    margin: 0.7vw 0 0 1vw
+                    font-size: 1vw
+                    font-family: "Poppin bold"

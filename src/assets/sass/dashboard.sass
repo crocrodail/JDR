@@ -1,0 +1,749 @@
+@import "./fonts.sass"
+@import "./theme.sass"
+#content-dashboard
+    background-color: #FAFAFA
+@media (min-width: 739px)
+    .modal-content
+        position: relative
+        margin: 3vw auto
+        width: 40vw
+        background-color: #FAFAFA
+        padding-top: 3vw
+        padding-bottom: 3vw
+        border-radius: 1vw
+        max-height: 90vh
+        overflow-y: auto
+        .close
+            position: absolute
+            right: 2vw
+            top: 2vw
+            font-size: 3vw
+            &:hover
+                cursor: pointer
+        .logo
+            display: block
+            width: 7vw
+            height: 7vw
+            margin: 0 auto
+            border-radius: 1vw
+        h1
+            text-align: center
+            font-size: 1.5vw
+            font-family: "ConcertOne"
+            margin: 0
+            margin-bottom: 2vw
+        p
+            text-align: center
+            font-size: 1vw
+            font-family: "Poppin"
+        .qrcode
+            width: 15vw
+            height: 15vw
+            margin: 0 auto
+            display: block
+            margin-bottom: 3vw
+        button
+            display: block
+            width: 20vw
+            height: 2.5vw
+            margin: 0 auto
+            background-color: $secondary
+            border: none
+            font-family: "ConcertOne"
+            color: white
+            font-size: 1vw
+            border-radius: .5vw
+            margin-top: 1vw
+            &:hover
+                cursor: pointer
+                background-color: $secondary-hover
+        .text
+            font-size: .8vw
+            font-family: "Poppin"
+            margin-left: 5vw
+        label
+            padding-top: 1vw
+        .select-cat
+            font-family: "Poppin"
+            font-size: .6vw
+            width: 30.5vw
+            height: 1.8vw
+            margin: auto
+            display: block
+            margin-bottom: 1vw
+            margin-top: .3vw
+            padding: 0
+            padding-left: .3vw
+
+        input
+            padding-left: .6vw
+            width: 29.2vw
+            height: 1.8vw
+            font-size: .6vw
+            margin: auto
+            display: block
+            margin-bottom: 1vw
+            margin-top: .3vw
+            border-radius: .2vw
+            border: grey 1px solid
+        .cropper
+            width: 25vw
+            height: 15vw
+            display: block
+            margin: auto
+        .upload
+            width: 25vw
+            height: 15vw
+            display: block
+            margin: auto
+        .delete-img
+            position: absolute
+            right: 2vw
+            top: 30vw
+            font-size: 3vw
+            color: #ff6871
+            &:hover
+                cursor: pointer
+    .bm-burger-button
+        display: none
+    .dashboard-menu
+        display: flex
+        a
+            text-decoration: none
+            color: $primary
+        .menu
+            position: relative
+            width: 19vw
+            height: 100vh
+            min-height: 50vw
+            background: rgba(102, 151, 230, 0.71)
+            box-shadow: 11.308px 12.5644px 79.1558px rgba(0, 0, 0, 0.24)
+            z-index: 10
+            img
+                display: block
+                margin: auto
+                width: 8vw
+                height: 4vw
+                margin-top: 3vw
+            .user
+                margin-top: 1.5vw
+                width: 4vw
+                height: 4vw
+                border-radius: 50%
+                border: .15vw solid white
+                padding: .5vw
+                filter: drop-shadow(0px 4px 6px rgba(255, 178, 146, 0.6))
+            h2
+                text-align: center
+                font-size: 1.5vw
+                font-family: "Poppin bold"
+                color: white
+                margin-bottom: 0.3vw
+
+            h3
+                text-align: center
+                font-size: 1vw
+                font-family: "Poppin bold"
+                color: rgba(255, 255, 255, 0.4)
+                margin-top: 0vw
+            .menu-items
+                color: $primary
+                font-family: "Poppin bold"
+                font-size: 0.8vw
+                margin-top: 3vw
+            .actif-menu
+                &:after
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: .7vw
+                        height: 100%
+                        background-color: white
+                        z-index: -1
+            .menu-item
+                position: relative
+                color: #fff
+                display: flex
+                height: 4vw
+                width: 15vw
+                align-items: center
+                margin: auto
+                padding: 0 0 0 3.5vw
+                border-radius: 1vw
+                margin-top: 0vw
+                &:hover
+                    cursor: pointer
+                    &:after
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: .7vw
+                        height: 100%
+                        background-color: white
+                        z-index: -1
+                span
+                    margin-left: 1vw
+                svg
+                    width: 1.5vw
+                    height: 1.5vw            
+            .logout
+                position: absolute
+                bottom: 2vw
+                left: 0vw
+    .content
+        width: 100%
+    .parametre
+        h1
+            font-size: 1vw
+            font-family: "Poppin bold"
+            margin-top: 3vw
+            margin-left: 7vw
+            color: $primary
+        button
+            width: 10vw
+            height: 2vw
+            margin-left: 7vw
+            margin-top: 1vw
+            border: none
+            background-color: #ff6871
+            color: white
+            font-size: .7vw
+            font-family: "Poppin bold"
+            border-radius: .5vw
+            &:hover
+                cursor: pointer
+                background-color: #ac1e28
+                color: white
+    .switch
+        span
+            font-size: 1vw
+    .Customize
+        h2
+            font-size: 1vw
+            font-family: "Poppin bold"
+            margin-top: 3vw
+            margin-left: 7vw
+            color: $primary
+            margin-bottom: 5vw
+        .react-colorful
+            margin-left: 10vw
+            width: 20vw
+        p
+            margin-left: 10vw
+            font-size: .8vw
+            font-family: "Poppin"
+        input
+            font-size: 1vw
+            height: 2vw
+            padding: 0 .5vw
+            width: 8vw
+            margin-left: 10vw
+        #font-picker
+            margin-left: 10vw
+            width: 20vw 
+        .save
+            width: 10vw
+            height: 2vw
+            margin-left: 10vw
+            margin-top: 1vw
+            border: none
+            background-color: $secondary
+            color: white
+            font-size: .7vw
+            font-family: "Poppin bold"
+            border-radius: .5vw
+            margin-top: 5vw
+            &:hover
+                cursor: pointer
+                background-color: $secondary-hover
+                color: white
+        .show
+            width: 9vw
+            height: 2.1vw
+            position: absolute
+            margin-left: 20vw
+            margin-top: -2.2vw
+            border-width: 1px
+            border-style: solid
+            border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))
+        .content
+            display: flex
+            .preview
+                background-color:#fff
+                width: 30vw
+                margin-left: 12vw
+                margin-top: -13vw
+                border-radius: 1vw
+                box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+                .title
+                    margin-top: 3vw
+                    img
+                        display: block
+                        width: 8vw
+                        height: 8vw
+                        border-radius: 1vw
+                        margin: auto
+                    h1
+                        font-size: 2vw
+                        font-family: "ConcertOne"
+                        color: $secondary
+                        text-align: center
+                .item
+                    background-color:#f3f3f3
+                    margin: auto
+                    margin-bottom: 3vw
+                    padding: 1.5vw
+                    width: 20vw
+                    border-radius: 1vw
+                    box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+                    img
+                        width: 15vw
+                        height: 15vw
+                        margin: auto
+                        display: block
+                        border-radius: 1vw
+                    h2
+                        margin-left: 2vw
+                        margin-top: 1vw
+                        margin-bottom: 1vw
+                        font-size: 1vw
+                        font-family: "Poppin bold"
+                    h3
+                        margin-left: 2vw
+                        font-size: .8vw
+                        font-family: "Poppin bold"
+                        color: $secondary
+                    p
+                        margin-left: 2vw
+                        font-size: .8vw
+                        font-family: "Poppin"
+                        width: 20vw
+
+@media (max-width: 740px)
+    .modal-content
+        position: relative
+        margin: 3vw auto
+        width: 90vw
+        background-color: #f8f8f8
+        padding-top: 10vw
+        padding-bottom: 5vw
+        border-radius: 1vw
+        max-height: 90vh
+        overflow-y: auto
+        .close
+            position: absolute
+            right: 2vw
+            top: 2vw
+            font-size: 10vw
+            &:hover
+                cursor: pointer
+        .logo
+            display: block
+            width: 30vw
+            height: 30vw
+            margin: 0 auto
+            border-radius: 1vw
+        h1
+            text-align: center
+            font-size: 10vw
+            font-family: "ConcertOne"
+            margin: 0
+            margin-bottom: 15vw
+        p
+            text-align: center
+            font-size: 5vw
+            width: 80vw
+            text-align: center
+            margin-left:  auto
+            margin-right:  auto
+            font-family: "Poppin"
+        .qrcode
+            width: 60vw
+            height: 60vw
+            margin: 0 auto
+            display: block
+            margin-bottom: 3vw
+        button
+            display: block
+            width: 70vw
+            height: 15vw
+            margin: 0 auto
+            background-color: $secondary
+            border: none
+            font-family: "ConcertOne"
+            color: white
+            font-size: 6vw
+            border-radius: 4vw
+            margin-top: 8vw
+            &:hover
+                cursor: pointer
+                background-color: $secondary-hover
+        .text
+            font-size: 5vw
+            font-family: "Poppin"
+            margin-left: 5vw
+        label
+            padding-top: 5vw
+        .select-cat
+            font-family: "Poppin"
+            font-size: 5vw
+            width: 76vw
+            height: 12vw
+            margin: auto
+            display: block
+            margin-bottom: 10vw
+            margin-top: 2vw
+            padding: 0
+            padding-left: 0vw
+
+        input
+            padding-left: 5vw
+            width: 70vw
+            height: 12vw
+            font-size: 5vw
+            margin: auto
+            display: block
+            margin-bottom: 10vw
+            margin-top: 2vw
+            border-radius: .2vw
+            border: grey 1px solid
+        .cropper
+            width: 70vw
+            height: 70vw
+            display: block
+            margin: auto
+        .upload
+            width: 70vw
+            height: 70vw
+            display: block
+            margin: auto
+        .delete-img
+            position: absolute
+            right: 0vw
+            top: 220vw
+            font-size: 10vw
+            color: #ff6871
+            &:hover
+                cursor: pointer
+    .dashboard-menu
+        display: flex
+        a
+            text-decoration: none
+            color: $primary
+        .menu
+            display: none
+            img
+                display: block
+                margin: auto
+                width: 6vw
+                height: 6.4vw
+                margin-top: 2vw
+            .menu-items
+                color: $primary
+                font-family: "Poppin bold"
+                font-size: 1vw
+                margin-top: 8vw
+            .actif-menu
+                background-color: rgba(104,119,255,.05)
+            .menu-item
+                position: relative
+                display: flex
+                height: 4vw
+                width: 15vw
+                align-items: center
+                margin: auto
+                padding: 0 1vw
+                border-radius: 1vw
+                margin-top: .5vw
+                &:hover
+                    background-color: rgba(104,119,255,.05)
+                    cursor: pointer
+                span
+                    margin-left: 1vw
+                svg
+                    width: 2vw
+                    height: 2vw            
+            .logout
+                position: absolute
+                bottom: 2vw
+                left: 1.5vw
+    .content
+        width: 100%
+    .header-dish
+            width: 40vw
+            margin-top: 3vw
+            .title
+                position: fixed
+                display: flex
+                width: 100%
+
+                background-color:   white
+                z-index: 2
+                top: 0
+            img
+                width: 12vw
+                height: 12vw
+                border-radius: 3vw
+                background-color:   white
+                margin-left: 30vw
+                margin-top: 5vw
+            h1
+                font-size: 8vw
+                font-family: "ConcertOne"
+                margin-top: 8vw
+                margin-left: 5vw
+                color: $secondary
+            .menu-option
+                box-shadow: 0 62px 165px rgb(31 37 85 / 6%), 0 26px 20.6606px rgb(31 37 85 / 3%)
+                border-radius: 5vw
+                padding: .5vw 1vw
+                display: flex
+                justify-content: space-around
+                margin-left: 5vw
+                margin-top: 30vw
+                margin-bottom: 10vw
+                width: 90vw
+                background-color:#fff
+                button
+                    position: relative
+                    font-size: 3vw
+                    font-family: "Poppin bold"
+                    border: none
+                    background-color: transparent
+                    width: 25vw
+                    height: 15vw
+                    border-radius: 0.3vw
+                    color: $primary
+                    padding-left: 10vw
+                    &:hover
+                        cursor: pointer
+                        background-color: rgba(104,119,255,.05)
+                    svg
+                        position: absolute
+                        width: 5vw
+                        height: 5vw
+                        fill: $primary
+                        stroke: $primary
+                        margin-left: -8vw
+                        top: 5vw
+    .Dish
+        width: 100%
+        .content
+            h1
+                margin-top: 2vw
+                margin-left: 7vw
+                font-size: 5vw
+                font-family: "Poppin bold"
+            .title
+                margin: 0
+                padding: 0
+                margin-top: 2vw
+                margin-left: 7vw
+                width: 25vw
+                height: 5vw
+                transform: none
+            .item
+                position: relative
+                transform: none
+                margin-top: 5vw
+                margin-bottom: 5vw
+                padding: 5vw
+                display: flex
+                border-radius: 3vw
+                margin-left: 7vw
+                width: 77vw
+                min-height: 50vw
+                box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+                &:not(span)
+                    background-color:#fff
+                img
+                    width: 30vw
+                    height: 30vw
+                    border-radius: 3vw
+                h2
+                    margin-left: 5vw
+                    font-size: 5vw
+                    font-family: "Poppin bold"
+                    margin-top: 1vw
+                    margin-bottom: 1vw
+                h3
+                    margin-left: 5vw
+                    margin-top: 1vw
+                    margin-bottom: 1vw
+                    font-size: 4vw
+                    font-family: "Poppin bold"
+                    color: $secondary
+                p
+                    margin-left: 5vw
+                    margin-top: 1vw
+                    margin-bottom: 1vw
+                    font-size: 4vw
+                    font-family: "Poppin"
+                    width: 40vw
+                .options
+                    position: absolute
+                    left: 2.5vw
+                    bottom: 3vw
+                    .btnred
+                        color: #ff6871
+                    button
+                        position: relative
+                        border: none
+                        background-color: transparent
+                        color: $secondary
+                        font-size: 2.5vw
+                        height: 2vw
+                        border-radius: .3vw
+                        padding-left: 5vw
+                        padding-right: .5vw
+                        font-family: "Poppin bold"
+                        &:hover
+                            cursor: pointer
+                            background-color: rgba(104,119,255,.05)
+                        svg
+                            width: 5vw
+                            height: 5vw
+                            position: absolute
+                            left: 0vw
+                            top: -.8vw
+    .parametre
+        h1
+            font-size: 8vw
+            font-family: "Poppin bold"
+            margin-top: 30vw
+            margin-left: 10vw
+            color: $primary
+        button
+            width: 60vw
+            height: 10vw
+            margin-left: 15vw
+            margin-top: 1vw
+            border: none
+            background-color: #ff6871
+            color: white
+            font-size: 4vw
+            font-family: "Poppin bold"
+            border-radius: 3vw
+            &:hover
+                cursor: pointer
+                background-color: #ac1e28
+                color: white
+    .switch
+        position: absolute
+        left: 0
+        margin-top: 32vw
+        margin-left: 6vw
+        span
+            font-size: 4vw
+    .Customize
+        h2
+            font-size: 5vw
+            font-family: "Poppin bold"
+            margin-top: 30vw
+            margin-left: 7vw
+            color: $primary
+            margin-bottom: 5vw
+        .react-colorful
+            margin-left: 20vw
+            width: 60vw
+            height: 60vw
+        p
+            margin-left: 10vw
+            font-size: 4vw
+            font-family: "Poppin"
+        input
+            font-size: 5vw
+            height: 10vw
+            padding: 0 .5vw
+            width: 40vw
+            margin-left: 10vw
+        #font-picker
+            margin-left: 10vw
+            width: 80vw 
+            margin-bottom: 10vw
+        .save
+            width: 60vw
+            height: 10vw
+            margin-left: 20vw
+            margin-top: 10vw
+            border: none
+            background-color: $secondary
+            color: white
+            font-size: 4vw
+            font-family: "Poppin bold"
+            border-radius: 3vw
+            margin-top: 5vw
+            &:hover
+                cursor: pointer
+                background-color: $secondary-hover
+                color: white
+        .show
+            width: 30vw
+            height: 10vw
+            position: absolute
+            margin-left: 58vw
+            margin-top: -10.8vw
+            border-width: 1px
+            border-style: solid
+            border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))
+        .content
+            display: flex
+            flex-direction: column
+            .preview
+                width: 90vw
+                margin-left: 5vw
+                margin-top: 10vw
+                border-radius: 3vw
+                box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+                background-color: #fff
+                .title
+                    margin-top: 10vw
+                    img
+                        display: block
+                        width: 20vw
+                        height: 20vw
+                        border-radius: 1vw
+                        margin: auto
+                    h1
+                        font-size: 7vw
+                        font-family: "ConcertOne"
+                        color: $secondary
+                        text-align: center
+                .item
+                    background-color:#f3f3f3
+                    margin: auto
+                    margin-bottom: 3vw
+                    padding: 10vw
+                    width: 60vw
+                    border-radius: 3vw
+                    box-shadow: 0 42px 165px rgb(31 37 85 / 6%), 0 5.25905px 20.6606px rgb(224 226 241 / 3%)
+                    img
+                        width: 50vw
+                        height: 50vw
+                        margin: auto
+                        display: block
+                        border-radius: 3vw
+                    h2
+                        margin-left: 5vw
+                        margin-top: 4vw
+                        margin-bottom: 1vw
+                        font-size: 8vw
+                        font-family: "Poppin bold"
+                    h3
+                        margin-left: 5vw
+                        font-size: 5vw
+                        font-family: "Poppin bold"
+                        margin-top: 1vw
+                        margin-bottom: 1vw
+                        color: $secondary
+                    p
+                        margin-top: 1vw
+                        margin-left: 5vw
+                        font-size: 4vw
+                        font-family: "Poppin"
+                        width: 60vw
+
+        
+
