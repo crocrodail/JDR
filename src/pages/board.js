@@ -45,7 +45,6 @@ const Board = () => {
         img.id = id;
         img.style.position = 'absolute';
         img.style.width = size + 'px';
-        img.style.height = size + 'px';
         img.style.userSelect = 'none';
         img.style.left = x + 'px';
         img.style.top = y + 'px';
@@ -114,7 +113,6 @@ const Board = () => {
                     div.style.left = element.x + 'px';
                     div.style.top = element.y + 'px';
                     img.style.width = element.size + 'px';
-                    img.style.height = element.size + 'px';
                 }
             }
         });
