@@ -75,7 +75,7 @@ const Board = () => {
     
 
     React.useEffect(() => {
-        const socket = io(process.env.REACT_APP_API_URL+"/websocket/", {
+        const socket = io(process.env.REACT_APP_API_URL, {
             transports: ['websocket'],
         });
         socket.on('connect', () => {
