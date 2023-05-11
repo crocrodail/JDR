@@ -50,8 +50,8 @@ const Board = () => {
         img.style.top = y + 'px';
         div.style.left = x - img.width + 5 + 'px';
         div.style.top = y - img.height + 5 + 'px';
-        document.querySelector('#root').appendChild(img);
-        document.querySelector('#root').appendChild(div);
+        document.querySelector('#board').appendChild(img);
+        document.querySelector('#board').appendChild(div);
         img.addEventListener('click', (e) => {
             if (moveImage !== '') {
                 moveImage = '';
@@ -74,11 +74,19 @@ const Board = () => {
     
 
     React.useEffect(() => {
+        const div = document.createElement('div');
+        div.id = 'board';
+        document.querySelector('#root').appendChild(div);
+        
         const socket = io(process.env.REACT_APP_API_URL, {
             transports: ['websocket'],
         });
         socket.on('connect', () => {
             console.log('connected');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('disconnected');
         });
 
         socket.on('disconnectemit', (id) => {
@@ -135,7 +143,7 @@ const Board = () => {
                     span.style.position = 'absolute';
                     img.style.width = '20px';
                     img.style.height = '20px';
-                    document.querySelector('#root').appendChild(div);
+                    document.querySelector('#board').appendChild(div);
                     div.appendChild(img);
                     div.appendChild(span);
                 }
@@ -167,6 +175,7 @@ const Board = () => {
         
         return () => {
             socket.disconnect();
+            document.querySelector('#board').remove();
         };
     }, [moveImage, user.token, user.user.email]);
 
