@@ -1,9 +1,10 @@
 import Home from "./pages/home";
-import Dish from './component/menu/Dish';
+import Board from "./pages/board";
 
 import { BiCategoryAlt } from "react-icons/bi";
-import { CgOptions } from "react-icons/cg";
-import { MdQrCode2 } from "react-icons/md";
+import { FiMap } from "react-icons/fi";
+
+
 
 const Routes =  [
 
@@ -14,12 +15,12 @@ const Routes =  [
         icon: BiCategoryAlt,
     },
 
-    // {
-    //     path: '/menu',
-    //     component: Dish,
-    //     name: 'Menu',
-    //     icon: CgOptions,
-    // },
+    {
+        path: '/board',
+        component: Board,
+        name: 'Board',
+        icon: FiMap,
+    },
 
     // {
     //     path: '/mqrcode',

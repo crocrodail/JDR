@@ -17,7 +17,7 @@ const configRoute = [
   { method: "GET", path: "/user/info", role: ["*"], controller: User.info },
   { method: "GET", path: "/user", role: ["*"], controller: User.getAll },
   { method: "PUT", path: "/user", role: ["*"], controller: User.update },
-  { method: "PUT", path: "/user/:id", role: ["admin"], controller: User.updateOne },
+  { method: "PUT", path: "/user/:id", role: ["*"], controller: User.update },
   { method: "GET", path: "/user/:id", role: ["admin"], controller: User.getOne },
   { method: "POST", path: "/user/delete", role: ["*"], controller: User.deleteOne },
   /*--- User ---*/

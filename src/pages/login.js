@@ -46,7 +46,7 @@ const Login = () => {
                             <input type="text" defaultValue="" placeholder="Nom" {...register("email")} />
                         </label>
                         <label>
-                            <input type="text" placeholder="Mot de passe" {...register("password", { required: true })} />
+                            <input type="password" placeholder="Mot de passe" {...register("password", { required: true })} />
                             {errors.password && <p className="error">Aucun mot de passe.</p>}
                         </label>
                     </div>

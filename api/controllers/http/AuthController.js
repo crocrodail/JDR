@@ -8,8 +8,6 @@ const User = db.User;
 const fs = require("fs");
 
 const login = async (req, res) => {
-  console.log("login");
-  console.log(req.body);
   const v = new Validator(req.body, {
     email: "required",
     password: "required",

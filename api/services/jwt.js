@@ -30,7 +30,7 @@ async function isRevoked(req, payload) {
       const splitUrl = protectedRoot[key].path.split(':')
       if (splitUrl.length > 1) {
         const baseUrls = { url: splitUrl[0].replace(/\//g, ''), params: splitUrl.length - 1 }
-        if ((urlCall[0] === baseUrls.url) && (baseUrls.params == urlCall.length - 1)) {
+        if (((urlCall[0] === baseUrls.url) && (baseUrls.params == urlCall.length - 1)) || (baseUrls.url === urlCall[0].split('?')[0])) {
           if (payload.payload.role.some(item => protectedRoot[key].role.includes(item)) || protectedRoot[key].role.includes('*')) {
             isIn = true
           }

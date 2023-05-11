@@ -41,15 +41,18 @@ const Home = () => {
             <div className="content">
                 <ul>
                     {
-                        allUser.map((item, index) => 
-                            <li key={item.email} className="hvr-float" onClick={() => setMenuId(item.email)}>
-                                <div className="mask" style={{backgroundImage: `url('${item.image}')`}}></div>
-                                    <div className="maskcolor"></div>
-                                        <img className="icon" src={item.image} alt="chat" />
-                                        <span>{item.email}</span>
-                                    <div>
-                                </div>
-                            </li>
+                        allUser.map((item, index) => <div key={item.email}>
+                            {   
+                                !item.role.includes('mj') &&
+                                <li key={item.email} className="hvr-float" onClick={() => setMenuId(item.email)}>
+                                    <div className="mask" style={{backgroundImage: `url('${item.image}')`}}></div>
+                                        <div className="maskcolor"></div>
+                                            <img className="icon" src={item.image} alt="chat" />
+                                            <span>{item.email}</span>
+                                        <div>
+                                    </div>
+                                </li>
+                            }</div>
                         )
                     }
                     {

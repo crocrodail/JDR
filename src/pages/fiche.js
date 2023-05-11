@@ -32,7 +32,8 @@ const Fiche = (props) => {
 
     const handleSave = () => {
         console.log(actualFiche);
-        Request(`${process.env.REACT_APP_API_URL}/user`, {
+        const queryString = user.user.role.includes('mj') ? `?email=${actualFiche.email}` : '';
+        Request(`${process.env.REACT_APP_API_URL}/user${queryString}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -49,12 +50,11 @@ const Fiche = (props) => {
     const handleEdit = () => {
         setEditMode(true);
     }
-
     return (
         <div className="Fiche">
             <button id="back" className='btn btn-primary-icon' onClick={()=>setMenuId(0)}><FaArrowLeft />Back</button>
             {
-                props.allUser.filter(item => item.email === menuId)[0].email === user.user.email ?
+                props.allUser.filter(item => item.email === menuId)[0].email === user.user.email || user.user.role.includes('mj') ?
                     !editMode ?
                         <button id="edit" className='btn btn-primary-icon' onClick={handleEdit}><FaEdit />Edit</button>
                         :
@@ -344,7 +344,7 @@ const Fiche = (props) => {
                                             () => {
                                                 setActualFiche({
                                                     ...actualFiche,
-                                                    skills: actualFiche.items.filter((item, index2) => index2 !== index)
+                                                    items: actualFiche.items.filter((item, index2) => index2 !== index)
                                                 })
                                             }
                                         }/>
