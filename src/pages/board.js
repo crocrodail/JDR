@@ -127,7 +127,7 @@ const Board = () => {
 
         socket.on('dataMouse', (data) => {
             for (const key in data) {
-                if (document.getElementById(data[key].user) === null) {
+                if (document.getElementById(data[key].user) === null && data[key].user !== user.user.email) {
                     const div = document.createElement('div');
                     const img = document.createElement('img');
                     const span = document.createElement('span');
