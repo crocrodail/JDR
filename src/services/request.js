@@ -1,10 +1,6 @@
-import React from "react"
-import Recoil from 'recoil';
-import { userState } from './../store/userStore';
+
 
 export default function Request(url, body) {
-    
-    const [, setUser] = Recoil.useRecoilState(userState);
     return new Promise((resolve) => {
         fetch(url, body)
             .then((response) => {
@@ -13,7 +9,7 @@ export default function Request(url, body) {
                 } else {
                     if (response.status === 401) {
                         localStorage.removeItem('user');
-                        setUser(null);
+                        window.location.reload();
                     }
                     throw new Error('Something went wrong');
                 }
