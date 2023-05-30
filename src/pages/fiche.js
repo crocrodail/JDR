@@ -20,7 +20,7 @@ const Fiche = (props) => {
     const [actualFiche, setActualFiche] = React.useState(props.allUser.filter(item => item.email === menuId)[0]);
     const [totalPoints, setTotalPoints] = React.useState(0);
 
-    const limite = 55;
+    const limite = 50;
 
     React.useEffect(() => {
         let actualTotalPoints = 0;
@@ -121,21 +121,21 @@ const Fiche = (props) => {
                      <h3>limite {totalPoints} / {limite}</h3>
                 }
                 <div className="stat">
-                    <h4>Courage</h4>
-                    <h4>{actualFiche.state.courage}</h4>
+                    <h4>Adresse / Chance</h4>
+                    <h4>{actualFiche.state?.chance || 0}</h4>
                     {
                         editMode &&
                         <div className="edit">
                             <button className="btn btn-primary-icon" 
                             onClick={
                                 () => {
-                                    if (totalPoints < limite && actualFiche.state.courage < 18 ) {
+                                    if (totalPoints < limite && actualFiche.state?.chance < 18 ) {
 
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                courage: actualFiche.state.courage + 1
+                                                chance: actualFiche.state?.chance + 1
                                             }
                                         })
                                         setTotalPoints(totalPoints + 1);
@@ -145,51 +145,12 @@ const Fiche = (props) => {
                             <button className="btn btn-primary-icon"
                             onClick={
                                 () => {
-                                    if (actualFiche.state.courage > 0) {
+                                    if (actualFiche.state?.chance > 0) {
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                courage: actualFiche.state.courage - 1
-                                            }
-                                        })
-                                        setTotalPoints(totalPoints - 1);
-                                    }
-                                }
-                            }><FaMinus /></button>
-                        </div>
-                    }
-                </div>
-                <div className="stat">
-                    <h4>Chance</h4>
-                    <h4>{actualFiche.state.chance}</h4>
-                    {
-                        editMode &&
-                        <div className="edit">
-                            <button className="btn btn-primary-icon"
-                            onClick={
-                                () => {
-                                    if (totalPoints < limite && actualFiche.state.chance < 18) {
-                                        setActualFiche({
-                                            ...actualFiche,
-                                            state: {
-                                                ...actualFiche.state,
-                                                chance: actualFiche.state.chance + 1
-                                            }
-                                        })
-                                        setTotalPoints(totalPoints + 1);
-                                    }
-                                }
-                            }><FaPlus /></button>
-                            <button className="btn btn-primary-icon"
-                            onClick={
-                                () => {
-                                    if (actualFiche.state.chance > 0) {
-                                        setActualFiche({
-                                            ...actualFiche,
-                                            state: {
-                                                ...actualFiche.state,
-                                                chance: actualFiche.state.chance - 1
+                                                chance: actualFiche.state?.chance - 1
                                             }
                                         })
                                         setTotalPoints(totalPoints - 1);
@@ -201,18 +162,19 @@ const Fiche = (props) => {
                 </div>
                 <div className="stat">
                     <h4>Charisme</h4>
-                    <h4>{actualFiche.state.charisme}</h4>
+                    <h4>{actualFiche.state?.charisme || 0}</h4>
                     {
                         editMode &&
                         <div className="edit">
-                            <button className="btn btn-primary-icon" onClick={
+                            <button className="btn btn-primary-icon"
+                            onClick={
                                 () => {
-                                    if (totalPoints < limite && actualFiche.state.charisme < 18) {
+                                    if (totalPoints < limite && actualFiche.state?.charisme < 18) {
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                charisme: actualFiche.state.charisme + 1
+                                                charisme: actualFiche.state?.charisme + 1
                                             }
                                         })
                                         setTotalPoints(totalPoints + 1);
@@ -222,12 +184,12 @@ const Fiche = (props) => {
                             <button className="btn btn-primary-icon"
                             onClick={
                                 () => {
-                                    if (actualFiche.state.charisme > 0) {
+                                    if (actualFiche.state?.charisme > 0) {
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                charisme: actualFiche.state.charisme - 1
+                                                charisme: actualFiche.state?.charisme - 1
                                             }
                                         })
                                         setTotalPoints(totalPoints - 1);
@@ -238,20 +200,58 @@ const Fiche = (props) => {
                     }
                 </div>
                 <div className="stat">
-                    <h4>Puissance</h4>
-                    <h4>{actualFiche.state.puissance}</h4>
+                    <h4>Habilité magique</h4>
+                    <h4>{actualFiche.state?.magic || 0}</h4>
+                    {
+                        editMode &&
+                        <div className="edit">
+                            <button className="btn btn-primary-icon" onClick={
+                                () => {
+                                    if (totalPoints < limite && actualFiche.state?.magic < 18) {
+                                        setActualFiche({
+                                            ...actualFiche,
+                                            state: {
+                                                ...actualFiche.state,
+                                                magic: actualFiche.state?.magic + 1
+                                            }
+                                        })
+                                        setTotalPoints(totalPoints + 1);
+                                    }
+                                }
+                            }><FaPlus /></button>
+                            <button className="btn btn-primary-icon"
+                            onClick={
+                                () => {
+                                    if (actualFiche.state?.magic > 0) {
+                                        setActualFiche({
+                                            ...actualFiche,
+                                            state: {
+                                                ...actualFiche.state,
+                                                magic: actualFiche.state?.magic - 1
+                                            }
+                                        })
+                                        setTotalPoints(totalPoints - 1);
+                                    }
+                                }
+                            }><FaMinus /></button>
+                        </div>
+                    }
+                </div>
+                <div className="stat">
+                    <h4>Habilité phisique</h4>
+                    <h4>{actualFiche.state?.damage || 0}</h4>
                     {
                         editMode &&
                         <div className="edit">
                             <button className="btn btn-primary-icon" 
                             onClick={
                                 () => {
-                                    if (totalPoints < limite && actualFiche.state.puissance < 18) {
+                                    if (totalPoints < limite && actualFiche.state?.damage < 18) {
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                puissance: actualFiche.state.puissance + 1
+                                                damage: actualFiche.state?.damage + 1
                                             }
                                         })
                                         setTotalPoints(totalPoints + 1);
@@ -260,12 +260,12 @@ const Fiche = (props) => {
                             }><FaPlus /></button>
                             <button className="btn btn-primary-icon" onClick={
                                 () => {
-                                    if (actualFiche.state.puissance > 0) {
+                                    if (actualFiche.state?.damage > 0) {
                                         setActualFiche({
                                             ...actualFiche,
                                             state: {
                                                 ...actualFiche.state,
-                                                puissance: actualFiche.state.puissance - 1
+                                                damage: actualFiche.state?.damage - 1
                                             }
                                         })
                                         setTotalPoints(totalPoints - 1);
@@ -297,7 +297,14 @@ const Fiche = (props) => {
                     {
                         actualFiche.skills.map((item, index) => 
                             <li key={index}>
-                                <h4>{item}</h4>
+                                {
+                                    item.includes('@') &&
+                                        <h4 style={{color: 'blue'}}>{item.replace(/@/g, '')}</h4>
+                                }
+                                {
+                                    !item.includes('@') &&
+                                        <h4>{item.replace(/@/g, '')}</h4>
+                                }
                                 {
                                     editMode &&
                                         <MdDelete className="delete" onClick={
@@ -337,7 +344,14 @@ const Fiche = (props) => {
                     {
                         actualFiche.items.map((item, index) => 
                             <li key={index}>
-                                <h4>{item}</h4>
+                                {
+                                    item.includes('@') &&
+                                        <h4 style={{color: 'blue'}}>{item.replace(/@/g, '')}</h4>
+                                }
+                                {
+                                    !item.includes('@') &&
+                                        <h4>{item.replace(/@/g, '')}</h4>
+                                }
                                 {
                                     editMode &&
                                         <MdDelete className="delete" onClick={

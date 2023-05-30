@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 
 const update = async (req, res) => {
   const email = req.query.email || req.auth.identity;
-  console.log(email);
   let user = await User.findOne({ email: email });
   if (req.body.email && req.body.email !== email) {
     const newUser = await User.findOne({ email: req.body.email });

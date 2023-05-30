@@ -41,7 +41,7 @@ const Home = () => {
             <div className="content">
                 <ul>
                     {
-                        allUser.map((item, index) => <div key={item.email}>
+                         allUser.filter((item) => !item.role.includes('mj')).map((item, index) => <div key={item.email}>
                             {   
                                 !item.role.includes('mj') &&
                                 <li key={item.email} className="hvr-float" onClick={() => setMenuId(item.email)}>
